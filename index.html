@@ -1,0 +1,76 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <div class="grid-container">
+        <nav class = "top-bar">
+            <ul class = "dropdown menu" data-dropdown-menu>
+                <li>
+                    <a href = "#">Home</a>
+                </li>
+                <li><a href = "#">Catalog</a></li>
+                <li><a href = "#">Borrow</a></li>
+                <li><a href = "#">Ebooks</a></li>
+            </ul>
+            <!--</div>-->
+            <div class = "top-bar-right">
+                <ul class = "menu">
+                    <li><input type = "search" placeholder = "Search"></li>
+                    <li>
+                        <button type = "button" class = "button">Search</button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <form action="#" method="" id="form_id">
+            <div class="grid-container">
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>House Rent
+                            <input type="text" name="rent" id="rent">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>Water Bill
+                            <input type="text" name="waterbill" id="waterbill">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>Electricity Bill
+                            <input type="text" name="elecbill" id="elecbill">
+                        </label>
+                    </div>
+                </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="medium-12 cell">
+                        <label>Internet Bill
+                            <input type="text" name="netbill" id="netbill">
+                        </label>
+                    </div>
+                </div>
+                <input type="button" name="submit_id" id="btn_id" value="Submit" onclick="submit_by_id()"/>
+
+            </div>
+        </form>
+        
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/what-input/dist/what-input.js"></script>
+    <script src="bower_components/foundation-sites/dist/js/foundation.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+
+  </body>
+</html>
