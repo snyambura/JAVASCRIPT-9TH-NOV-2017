@@ -27,6 +27,7 @@ function submit_by_id() {
 
 
 //constructor pattern
+//Inheritance - Parent
 function device(product, model, size){
     this.product=product;
     this.model = model;
@@ -42,6 +43,13 @@ function device(product, model, size){
 var laptop = new device("Macbook", "Pro", "15 inch");
 laptop.laptopname();
 
+
+//child - inherits and has additional properties
+function phone(product, model, model) {
+    Person.call(this, product, model, model, manufacturer);
+
+    this.manufacturer = manufacturer;
+}
 
 
 // prototype pattern
