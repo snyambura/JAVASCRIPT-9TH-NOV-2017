@@ -59,23 +59,6 @@ var laptop = new Device();
 console.log(laptop.laptopname ());
 
 
-//inheritance
-var ClassA = function() {
-    this.name = "class A";
-}
-
-ClassA.prototype.print = function() {
-    console.log(this.name);
-}
-
-var a = new ClassA();
-
-a.print();
-
-var inheritsFrom = function (child, parent) {
-    child.prototype = Object.create(parent.prototype);
-};
-
 //Inheritance
 //Parent
 function Person(first, last, age, gender) {
@@ -94,3 +77,4 @@ function Child(first, last, age, gender, interests, subject) {
     this.subject = subject;
     this.interests = interests
 }
+
