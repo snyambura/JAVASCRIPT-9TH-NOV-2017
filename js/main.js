@@ -2,36 +2,32 @@
 //Javascript functions
 
 function submit_by_id() {
-    var rent = document.getElementById("rent").value;
-    var waterbill = document.getElementById("waterbill").value;
-    var elecbill = document.getElementById("elecbill").value;
-    var netbill = document.getElementById("netbill").value;
+    var rent = parseInt(document.getElementById("rent").value);
+    var waterbill =parseInt(document.getElementById("waterbill").value);
+    var elecbill = parseInt(document.getElementById("elecbill").value);
+    var netbill = parseInt(document.getElementById("netbill").value);
 
 
-        document.getElementById("form_id").submit(); //form submission
+    document.getElementById("form_id").submit(); //form submission
 
 // closure
 
         function showDetails() {
+            var total = (rent + waterbill + elecbill + netbill);
+
             alert(" Rent : " + rent + " \n Water : " + waterbill + " \n Electricity : " + elecbill +
-                " \n Internet : "+netbill  + "\n\n Form Submitted Successfully......");
-
-        }
-
-        function showtotal () {
-            alert("Total is " + this.addex);
-            console.log("trial");
+                " \n Internet : "+ netbill  + "\n\n Total is " + total);
 
         }
 
 
-        showtotal();
         showDetails();
+        expenses.showDetails();
     }
 
 
 //object
-var expenses = {
+ var expenses = {
 
     rent : 100000,
     elecbill : 2000,
@@ -39,27 +35,23 @@ var expenses = {
     netbill : 5000,
 
 
-    showDetails : function () {
-        console.log(" Rent : " + rent + " \n Water : " + waterbill + " \n Electricity : " + elecbill +
-            " \n Internet : "+netbill  + "\n\n Form Submitted Successfully......");
-
-    },
-
     addexpenses : function () {
-        return this.rent + this.waterbill + this.elecbill + this.netbill;
+        return (this.rent + this.waterbill + this.elecbill + this.netbill);
 
     },
 
-    showtotal : function (){
-        this.showDetails()
-        console.log("Total is " + this.addexpenses());
-
-        console.log("trial");
+    showDetails : function () {
+        console.log(" Rent : " + this.rent + " \n Water : " + this.waterbill + " \n Electricity : " + this.elecbill +
+            " \n Internet : "+ this.netbill + "\n Total: " + this.addexpenses());
 
     }
 
 
-}
+
+
+
+};
+expenses.netbill = 200;
 
 
 //constructor pattern
@@ -82,7 +74,7 @@ laptop.laptopname();
 
 //child - inherits and has additional properties
 function phone(product, model, size) {
-    Person.call(this, product, model, size, manufacturer);
+    device.call(this, product, model, size, manufacturer);
 
     this.manufacturer = manufacturer;
     this.laptopname = function () {
