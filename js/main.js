@@ -7,21 +7,57 @@ function submit_by_id() {
     var elecbill = document.getElementById("elecbill").value;
     var netbill = document.getElementById("netbill").value;
 
-    {
+
         document.getElementById("form_id").submit(); //form submission
 
 // closure
 
         function showDetails() {
-            console.log(" Rent : " + rent + " \n Water : " + waterbill + " \n Electricity : " + elecbill +
+            alert(" Rent : " + rent + " \n Water : " + waterbill + " \n Electricity : " + elecbill +
                 " \n Internet : "+netbill  + "\n\n Form Submitted Successfully......");
 
         }
+
+        function showtotal () {
+            alert("Total is " + this.addex);
+            console.log("trial");
+
+        }
+
+
+        showtotal();
         showDetails();
     }
 
-    var myFunc = submit_by_id();
-    myFunc();
+
+//object
+var expenses = {
+
+    rent : 100000,
+    elecbill : 2000,
+    waterbill : 1000,
+    netbill : 5000,
+
+
+    showDetails : function () {
+        console.log(" Rent : " + rent + " \n Water : " + waterbill + " \n Electricity : " + elecbill +
+            " \n Internet : "+netbill  + "\n\n Form Submitted Successfully......");
+
+    },
+
+    addexpenses : function () {
+        return this.rent + this.waterbill + this.elecbill + this.netbill;
+
+    },
+
+    showtotal : function (){
+        this.showDetails()
+        console.log("Total is " + this.addexpenses());
+
+        console.log("trial");
+
+    }
+
 
 }
 
@@ -45,10 +81,13 @@ laptop.laptopname();
 
 
 //child - inherits and has additional properties
-function phone(product, model, model) {
-    Person.call(this, product, model, model, manufacturer);
+function phone(product, model, size) {
+    Person.call(this, product, model, size, manufacturer);
 
     this.manufacturer = manufacturer;
+    this.laptopname = function () {
+        console.log(this.product + " " + this.model + " " + this.size + " " + this.manufacturer)
+    }
 }
 
 
@@ -64,25 +103,7 @@ function Device() {
 }
 
 var laptop = new Device();
-console.log(laptop.laptopname ());
+laptop.laptopname ();
 
 
-//Inheritance
-//Parent
-function Person(first, last, age, gender) {
-    this.name = {
-        first,
-        last
-    };
-    this.age = age;
-    this.gender = gender;
-};
-
-//child - inherits and has additional properties
-function Child(first, last, age, gender, interests, subject) {
-    Person.call(this, first, last, age, gender);
-
-    this.subject = subject;
-    this.interests = interests
-}
 
